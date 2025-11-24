@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRIMESTAY SUITES</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS (animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .carousel-item { flex: none; scroll-snap-align: start; }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 60;
+      padding: 20px;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    main { padding-top: 80px; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar (responsive) -->
+  <nav class="bg-white shadow-md fixed w-full z-50" aria-label="Main navigation">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="#home" class="text-2xl font-bold text-indigo-600">PRIMESTAY SUITES</a>
+
+      <button id="nav-toggle" class="md:hidden text-2xl text-indigo-600" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul id="primary-navigation" class="hidden md:flex space-x-6" role="menubar">
+        <li role="none"><a role="menuitem" href="#about" class="hover:text-indigo-600">About</a></li>
+        <li role="none"><a role="menuitem" href="#gallery" class="hover:text-indigo-600">Gallery</a></li>
+        <li role="none"><a role="menuitem" href="#listings" class="hover:text-indigo-600">Suites</a></li>
+        <li role="none"><a role="menuitem" href="#testimonials" class="hover:text-indigo-600">Reviews</a></li>
+        <li role="none"><a role="menuitem" href="#booking" class="hover:text-indigo-600">Book Now</a></li>
+        <li role="none"><a role="menuitem" href="#contact" class="hover:text-indigo-600">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
+      <ul class="flex flex-col p-4 space-y-2">
+        <li><a href="#about" class="block">About</a></li>
+        <li><a href="#gallery" class="block">Gallery</a></li>
+        <li><a href="#listings" class="block">Suites</a></li>
+        <li><a href="#testimonials" class="block">Reviews</a></li>
+        <li><a href="#booking" class="block">Book Now</a></li>
+        <li><a href="#contact" class="block">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-indigo-600 text-white h-screen flex flex-col items-center justify-center text-center px-4" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">STAY COMFORT IN ELDORET — PRIMESTAY SUITES</h1>
+      <p class="text-lg md:text-2xl mb-6">Comfortable suites, excellent service, ideal location.</p>
+      <a href="#booking" class="bg-white text-indigo-600 px-6 py-3 font-semibold rounded shadow hover:bg-gray-100 transition">Book Your Stay</a>
+    </section>
+
+    <!-- About / Intro -->
+    <section id="about" class="py-16 px-4 bg-white">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4">Welcome to PRIMESTAY SUITES</h2>
+          <p class="text-gray-700">Located in Eldoret, PRIMESTAY SUITES offers modern accommodation with friendly service. Whether you're here for business or leisure, our rooms are designed to make you feel at home.</p>
+        </div>
+        <div data-aos="fade-left">
+          <img src="./images/suite1.jpg" alt="Suite preview" class="rounded-lg shadow w-full h-64 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-indigo-50 py-20 px-4" id="testimonials">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">GUEST REVIEWS</h2>
+      <div class="carousel space-x-6 max-w-5xl mx-auto" data-aos="zoom-in">
+        <div class="carousel-item bg-white p-6 rounded shadow min-w-[300px]">
+          <div class="flex items-center mb-2">
+            <p class="text-yellow-400 mr-2">★★★★★</p>
+            <span class="text-gray-600">5/5</span>
+          </div>
+          <p>"Fantastic stay in Eldoret! The suite was clean, comfortable, and beautifully maintained."</p>
+        </div>
+        <div class="carousel-item bg-white p-6 rounded shadow min-w-[300px]">
+          <div class="flex items-center mb-2">
+            <p class="text-yellow-400 mr-2">★★★★★</p>
+            <span class="text-gray-600">4.9/5</span>
+          </div>
+          <p>"Excellent service and great location. Will definitely book again!"</p>
+        </div>
+        <div class="carousel-item bg-white p-6 rounded shadow min-w-[300px]">
+          <div class="flex items-center mb-2">
+            <p class="text-yellow-400 mr-2">★★★★★</p>
+            <span class="text-gray-600">5/5</span>
+          </div>
+          <p>"Loved the Executive Suite! Comfortable, modern, and perfect for my business trip."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="py-16 px-4 bg-white">
+      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">IMAGE GALLERY</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <img src="./images/suite1.jpg" alt="Suite 1" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite1.jpg')" data-aos="zoom-in">
+        <img src="./images/suite2.jpg" alt="Suite 2" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite2.jpg')" data-aos="zoom-in" data-aos-delay="80">
+        <img src="./images/suite3.jpg" alt="Suite 3" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite3.jpg')" data-aos="zoom-in" data-aos-delay="160">
+        <img src="./images/suite4.jpg" alt="Suite 4" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite4.jpg')" data-aos="zoom-in" data-aos-delay="240">
+        <img src="./images/suite5.jpg" alt="Suite 5" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite5.jpg')" data-aos="zoom-in" data-aos-delay="320">
+        <img src="./images/suite6.jpg" alt="Suite 6" class="rounded-lg shadow cursor-pointer w-full h-48 object-cover" onclick="openLightbox('./images/suite6.jpg')" data-aos="zoom-in" data-aos-delay="400">
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image preview" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Preview">
+    </div>
+
+    
+    <!-- Booking Section -->
+    <section class="bg-gray-100 py-20 px-4" id="booking">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">BOOK YOUR SUITE</h2>
+
+      <form class="max-w-xl mx-auto bg-white p-8 rounded shadow space-y-4" action="#" method="post" data-aos="fade-up" aria-label="Booking form">
+        <div>
+          <label class="block mb-1 font-semibold">Full Name</label>
+          <input type="text" name="name" required class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your Full Name">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">Email</label>
+          <input type="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your Email">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">Phone Number</label>
+          <input type="tel" name="phone" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your Phone Number">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">Select Suite</label>
+          <select name="suite" class="w-full border border-gray-300 rounded px-3 py-2">
+            <option value="">Choose a Suite</option>
+            <option value="cityview">CITYVIEW SUITE</option>
+            <option value="gardenview">GARDENVIEW SUITE</option>
+            <option value="executive">EXECUTIVE SUITE</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 font-semibold">Check-in Date</label>
+            <input type="date" name="checkin" class="w-full border border-gray-300 rounded px-3 py-2">
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">Check-out Date</label>
+            <input type="date" name="checkout" class="w-full border border-gray-300 rounded px-3 py-2">
+          </div>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">Additional Notes</label>
+          <textarea name="notes" class="w-full border border-gray-300 rounded px-3 py-2" rows="3" placeholder="Any special requests?"></textarea>
+        </div>
+
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded font-semibold hover:bg-indigo-700 transition w-full">Book Now</button>
+      </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-white py-20 px-4" id="contact">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Contact Us</h2>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+        <!-- Contact Info -->
+        <div data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-4 text-indigo-600">Get In Touch</h3>
+          <p class="mb-3"><strong>Location:</strong> Eldoret City, Kisumu Road, near the airport</p>
+          <p class="mb-3"><strong>Phone:</strong> +254782744543 / +254113070423</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3 text-indigo-600">Follow Us</h3>
+          <div class="flex space-x-4 text-2xl">
+            <a href="#" class="text-indigo-600 hover:text-indigo-800" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-indigo-600 hover:text-indigo-800" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-indigo-600 hover:text-indigo-800" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+
+          <h3 class="text-xl font-semibold mt-8 mb-3 text-indigo-600">Find Us on the Map</h3>
+          <div class="rounded shadow overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31880.514!2d35.269!3d0.520!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101f650000001%3AEldoret!2sEldoret%2C%20Kenya!5e0!3m2!1sen!2ske!4v1698600000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="bg-gray-100 p-6 rounded-lg shadow space-y-4" data-aos="fade-left" action="#" method="post" aria-label="Contact form">
+          <div>
+            <label class="block mb-1 font-semibold">Full Name</label>
+            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your Name" required>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">Email Address</label>
+            <input type="email" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your Email" required>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">Message</label>
+            <textarea class="w-full border border-gray-300 rounded px-3 py-2" rows="4" placeholder="Your Message"></textarea>
+          </div>
+
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded font-semibold hover:bg-indigo-700 transition w-full">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    &copy; 2025 PRIMESTAY SUITES. All rights reserved.
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/254782744543" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+  <!-- Lightbox & Nav Script -->
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.style.display = 'flex';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      img.focus?.();
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'none';
+      lb.setAttribute('aria-hidden', 'true');
+      document.getElementById('lightbox-img').src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
